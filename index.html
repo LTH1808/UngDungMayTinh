@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+     <h1>Caculator</h1> 
+    <input type="number" id="a" placeholder=" giá trị a ">
+    <input type="number" id="b" placeholder=" giá trị b ">
+    <p id="result" >0</p>
+    <Button onclick="myfunction('+')">Addition(+)</Button>
+    <Button onclick="myfunction('-')">Subtraction(-)</Button>
+    <Button onclick="myfunction('*')">Multiplication(X)</Button>
+    <Button onclick="myfunction('/')">Division(/)</Button>
+     <style >
+        button {
+            height: 50px;
+            width: 150px;
+        }
+     </style>
+    <script>
+        function myfunction(operator) {
+            let a = +document.getElementById("a").value
+            let b = +document.getElementById("b").value
+            let result
+            switch (operator) {
+                case "+":
+                    result = a + b
+                    break;
+                case "-":
+                    result = a - b
+                    break;
+                case "*":
+                    result = a * b
+                    break;
+                case "/":
+                    if (b == 0) {
+                        result = "Không chia được cho 0"
+                    } else {
+                        result = a / b
+                    }
+                    break;
+            }
+            document.getElementById("result").innerText = result
+        }
+
+    </script>
+</body>
+
+</html>
